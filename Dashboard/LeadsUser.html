@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="LeadsUser.css" />
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">CR</div>
+        <div class="menu" style="flex-wrap: wrap;">
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//user.svg" style="height: 25px;">
+                <a href="/">Lead</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//mail.svg" style="height: 25px;">
+                <a href="#">Mail</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//text.svg" style="height: 25px;">
+                <a href="#">Text</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//task.svg" style="height: 25px;">
+                <a href="#">Tasks</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//calender.svg" style="height: 25px;">
+                <a href="#">Calender</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//deal.svg" style="height: 25px;">
+                <a href="#">Deals</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//admin.svg" style="height: 25px;">
+                <a href="#">Admin</a>
+            </div>
+            <div style="display: flex; align-items: center;justify-content: center;">
+                <img src="./image//reporting.svg" style="height: 25px;">
+                <a href="index.html">Reporting</a>
+            </div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="user-actions">
+            <span class="icon">📞</span>
+            <span class="icon">🔔</span>
+            <span class="icon">⚙️</span>
+            <div class="profile-container">
+                <div class="profile-pic" id="profilePic"></div>
+                <ul class="menu" id="menu">
+                    <li>My Profile</li>
+                    <li>My Settings</li>
+                    <li>My Devices</li>
+                    <li>Download App</li>
+                    <li>Privacy Policy</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <header class="mobileNavbar">
+        <div class="logo">CR</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+        <img src="./image/menu.svg" alt="navbar-menu" id="menuIcon">
+    </header>
+    <div class="sideDrawer" id="sideDrawer">
+        <ul>
+            <li>
+                <div class="profile-container">
+                    <div class="profile-pic" id="profilePicMobile"></div>
+                    <ul class="menu" id="menuMobile">
+                        <li>My Profile</li>
+                        <li>My Settings</li>
+                        <li>My Devices</li>
+                        <li>Download App</li>
+                        <li>Privacy Policy</li>
+                        <li>Logout</li>
+                    </ul>
+                </div>
+            </li>
+            <li style="display: flex; gap: 20px;"><span class="icon">📞</span>
+                <span class="icon">🔔</span>
+                <span class="icon">⚙️</span>
+            </li>
+            <li><a href="leads.html"><img src="./image//user.svg" style="height: 25px; ">
+                    <p>Leads</p>
+                </a></li>
+            <li><a href="#"><img src="./image//mail.svg" style="height: 25px;">Mail</a></li>
+            <li><a href="#"> <img src="./image//text.svg" style="height: 25px;">Text</a></li>
+            <li><a href="#"><img src="./image//task.svg" style="height: 25px;">Task </a></li>
+            <li><a href="#"><img src="./image//calender.svg" style="height: 25px;">Calender </a></li>
+            <li><a href="#"><img src="./image//deal.svg" style="height: 25px;">Deals </a></li>
+            <li><a href="#"><img src="./image//admin.svg" style="height: 25px;">Admin </a></li>
+            <li><a href="#"><img src="./image//reporting.svg" style="height: 25px;">Reporting </a></li>
+        </ul>
+    </div>
+    <div class="tabs-container">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 15px; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <div class="breadcrumb">
+                <span>Leads</span> &gt; <span>Smith Do</span>
+            </div>
+            <div class="tabs">
+                <div class="tab completed" data-tab="archive">Archive</div>
+                <div class="tab completed" data-tab="dead">Dead</div>
+                <div class="tab completed" data-tab="new">New</div>
+                <div class="tab completed" data-tab="attempted-contact">Attempted Contact</div>
+                <div class="tab completed" data-tab="has-a-realtor">Has a Realtor</div>
+                <div class="tab active" data-tab="contacted">Contacted</div>
+                <div class="tab" data-tab="showing">Showing</div>
+                <div class="tab" data-tab="in-contract">In Contract</div>
+                <div class="tab" data-tab="sold">Sold</div>
+            </div>
+            <div class="pagination">
+                <span>Lead</span>
+                <input type="number" min="1" max="50" value="2">
+                <span>/ 50</span>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane" id="archive">Content for Archive</div>
+            <div class="tab-pane" id="dead">Content for Dead</div>
+            <div class="tab-pane" id="new">Content for New</div>
+            <div class="tab-pane" id="attempted-contact">Content for Attempted Contact</div>
+            <div class="tab-pane" id="has-a-realtor">Content for Has a Realtor</div>
+            <div class="tab-pane active" id="contacted">
+                <div class="container-grid">
+                    <div class="user-card">
+                        <div class="user-profile">
+                            <div class="user-header">
+                                <div class="user-info">
+                                    <div class="avatar"></div>
+                                    <div>
+                                        <h3>Smith Do</h3>
+                                        <div class="user-meta">
+                                            <div class="user-age">
+                                                <p>30</p>
+                                                <img src="./image/arrow-triangle.svg" alt="arrow" style="height: 20px;">
+                                            </div>
+                                            <img src="./image/star.svg" alt="star">
+                                            <img src="./image/star.svg" alt="star">
+                                            <p class="user-role">BUYER</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="edit-button">
+                                    <img src="./image/edit.svg" alt="edit">
+                                </div>
+                            </div>
+                            <div class="action-buttons">
+                                <div class="action">
+                                    <button><img src="./image/mail-outline.svg" alt="mail"></button>
+                                    Mail
+                                </div>
+                                <div class="action">
+                                    <button><img src="./image/call.svg" alt="call"></button>
+                                    Call
+                                </div>
+                                <div class="action">
+                                    <button><img src="./image/message.svg" alt="text"></button>
+                                    Text
+                                </div>
+                                <div class="action">
+                                    <button><img src="./image/note.svg" alt="note"></button>
+                                    Note
+                                </div>
+                                <div class="action">
+                                    <button><img src="./image/file.svg" alt="file"></button>
+                                    Files
+                                </div>
+                                <div class="action" id="logMenu">
+                                    <div style="position: relative;">
+                                        <ul class="logmenu" id="log-menu">
+                                            <li>Log Email</li>
+                                            <li>Log Call</li>
+                                            <li>Log Call</li>
+                                        </ul>
+                                        <button><img src="./image/plus.svg" alt="log"></button>
+                                        Log
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="schedule">
+                                <h4>CR - Schedule Tour</h4>
+                                <div class="schedule-meta">
+                                    <img src="./image/call.svg" alt="call">
+                                    <p>30 min. ago <span class="tooltip" data-tooltip="Call Incoming">- Fri, Sep 6,
+                                            2019, 5:24 PM</span></p>
+                                </div>
+                                <p class="connection-status">Connected <span class="tooltip"
+                                        data-tooltip="Positive Conversation Tag Indicated(warm lead)">- Positive
+                                        Conversation Tag...</span></p>
+                            </div>
+                            <!-- <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <button
+                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
+                                    <p>Spanish</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
+                                </button>
+                                <button
+                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
+                                    <p>Invested</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
+                                </button>
+                                <button
+                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
+                                    <p>MDL Approved</p><img src="./image/close-dark.svg" alt="close"
+                                        style="height: 15px;">
+                                </button>
+                                <button
+                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
+                                    <p>Buyer</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
+                                </button>
+                                <button
+                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
+                                    <p>Showing</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
+                                </button>
+                                <button
+                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
+                                    <p>Lender Approved</p><img src="./image/close-dark.svg" alt="close"
+                                        style="height: 15px;">
+                                </button>
+                                <button
+                                    style="border-radius: 5px; border: 2px solid #ccc; background: #fff; padding: 10px;">5
+                                    more</button>
+                                <button
+                                    style="border-radius: 5px; border: 2px solid #ccc; background: #fff; padding: 10px; display: flex; gap: 10px; align-items: center;"><img
+                                        src="./image/plus.svg" alt="plus" style="height: 18px;">
+                                    <p>New Tag</p>
+                                </button>
+                            </div> -->
+                            <div id="tags-container" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                <!-- Tags -->
+                                <div class="tag">
+                                    <p>Spanish</p><img src="./image/close-dark.svg" alt="close"
+                                        onclick="removeTag(this)" style="height: 15px;">
+                                </div>
+                                <div class="tag">
+                                    <p>Invested</p><img src="./image/close-dark.svg" alt="close"
+                                        onclick="removeTag(this)" style="height: 15px;">
+                                </div>
+                                <div class="tag">
+                                    <p>MDL Approved</p><img src="./image/close-dark.svg" alt="close"
+                                        onclick="removeTag(this)" style="height: 15px;">
+                                </div>
+                                <div class="tag">
+                                    <p onclick="openDetailsDialog()">Lender Approved</p><img
+                                        src="./image/close-dark.svg" alt="close" onclick="removeTag(this)"
+                                        style="height: 15px;">
+                                </div>
+
+                                <!-- Details Dialog Box -->
+                                <div id="details-dialog"
+                                    style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 15px; border: 1px solid #ccc; border-radius: 5px; z-index: 1000;">
+                                    <h3 style="padding-bottom: 10px;">Details</h3>
+                                    <hr>
+                                    <div class="lender-dialog" style="margin-top: 10px; margin-bottom: 10px;">
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <label for="field1">Approval Amount</label>
+                                            <input id="field1" type="text"
+                                                style="margin-bottom: 10px; padding: 10px; border: 2px solid #ccc; border-radius: 5px; width: 100%; ">
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <label for="dropdown"> Financial Type</label>
+                                            <select id="dropdown"
+                                                style="margin-bottom: 10px; padding: 10px; border: 2px solid #ccc; border-radius: 5px; width: 100%;">
+                                                <option value="Option 1">Jacob Miler</option>
+                                                <option value="Option 2">Smith</option>
+                                                <option value="Option 3">Lavinson</option>
+                                            </select>
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <label for="field3">Loan Officer Name</label>
+                                            <input id="field3" type="text"
+                                                style="margin-bottom: 10px; padding: 10px; border: 2px solid #ccc; border-radius: 5px; width: 100%;">
+                                        </div>
+
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <label for="field2">Mortgage Co. Name</label>
+                                            <input id="field2" type="text"
+                                                style="margin-bottom: 10px; padding: 10px; border: 2px solid #ccc; border-radius: 5px; width: 100%;">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div
+                                        style="display: flex; justify-content: flex-end; gap: 10px; padding-top: 10px;">
+                                        <button onclick="closeDetailsDialog()"
+                                            style=" width: 100px; border-radius: 5px;">Cancel</button>
+                                        <button onclick="saveDetails()"
+                                            style="background: #28a745; color: #fff; width: 100px; border-radius: 5px;">Save</button>
+                                    </div>
+                                </div>
+                                <div id="details-dialog-overlay" onclick="closeDetailsDialog()"
+                                    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;">
+                                </div>
+                                <div class="tag hidden">
+                                    <p>Buyer</p><img src="./image/close-dark.svg" alt="close" onclick="removeTag(this)"
+                                        style="height: 15px;">
+                                </div>
+                                <div class="tag hidden">
+                                    <p>Showing</p><img src="./image/close-dark.svg" alt="close"
+                                        onclick="removeTag(this)" style="height: 15px;">
+                                </div>
+                                <!-- Buttons -->
+                                <button id="more-tags-btn" onclick="showMoreTags()"
+                                    style="border-radius: 5px; border: 2px solid #ccc; background: #fff; padding: 10px;">5
+                                    more</button>
+                                <button id="new-tag-btn" onclick="openDialog()"
+                                    style="border-radius: 5px; border: 2px solid #ccc; background: #fff; padding: 10px; display: flex; gap: 10px; align-items: center;">
+                                    <img src="./image/plus.svg" alt="plus" style="height: 18px;">
+                                    <p>New Tag</p>
+                                </button>
+                            </div>
+
+                            <!-- Dialog Box -->
+                            <div id="tag-dialog"
+                                style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 20px; border: 1px solid #ccc; border-radius: 5px; z-index: 1000;">
+                                <label for="new-tag-input">Enter new tag:</label>
+                                <br>
+                                <input id="new-tag-input" type="text" style="margin: 10px 0; padding: 5px;">
+                                <br>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <button onclick="closeDialog()"
+                                        style="background: #fff; color: #000; padding: 5px; border-radius: 5px;">Cancel</button>
+                                    <button onclick="addNewTag()"
+                                        style="background: #4ac366; color: #fff; padding: 5px; border-radius: 5px;">Submit</button>
+                                </div>
+                            </div>
+                            <div id="dialog-overlay" onclick="closeDialog()"
+                                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;">
+                            </div>
+
+                            <div class="confirn-details">
+                                <p style="font-size: 14px;">Confirm Showing: <span style="color: #ccc;"> 0</span></p>
+                                <p style="font-size: 14px;">Cancelled Showing: <span style="color: #ccc;"> 0</span></p>
+                                <p style="font-size: 14px;">Created: <span style="color: #ccc;"> 2 days ago</span></p>
+                                <p style="font-size: 14px;">Last Inquiry: <span style="color: #ccc;"> 5 hours ago</span>
+                                </p>
+                                <p style="font-size: 14px;">Live on CR: <span style="color: #ccc;"> 45 min ago</span>
+                                </p>
+                                <p style="font-size: 14px;">Last Touch: <span style="color: #ccc;"> 10 min ago</span>
+                                </p>
+                            </div>
+                            <hr>
+                            <div class="user-mail">
+                                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 5px; justify-content: center;">
+                                        <img src="./image/mail-outline.svg" alt="mail">
+                                        <p>01</p>
+                                    </div>
+                                    <p style="color: #ccc; font-size: 12px; font-weight: 600;">1 day ago <br>(Outgoing)
+                                    </p>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center;  gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 5px; justify-content: center;">
+                                        <img src="./image/call.svg" alt="mail">
+                                        <p>02</p>
+                                    </div>
+                                    <p style="color: #ccc; font-size: 12px; font-weight: 600;">5 days ago <br>(Incoming)
+                                    </p>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center;  gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 5px; justify-content: center;">
+                                        <img src="./image/message.svg" alt="mail">
+                                        <p>12</p>
+                                    </div>
+                                    <p style="color: #ccc; font-size: 12px; font-weight: 600;">30 min ago <br>(Outgoing)
+                                    </p>
+                                </div>
+                                <div style="display: flex; flex-direction: column; align-items: center;  gap: 10px;">
+                                    <div style="display: flex; align-items: center; gap: 5px; justify-content: center;">
+                                        <img src="./image/mail-outline.svg" alt="mail">
+                                        <p>01</p>
+                                    </div>
+                                    <p style="color: #ccc; font-size: 12px; font-weight: 600;">Today <br>8:40 PM</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="approval-amount">
+                                <div>
+                                    <p style="font-size: 14px;">Approval Amount</p>
+                                    <p style="color: #ccc; font-size: 12px; padding-top: 5px;">$ 50,000</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 14px;">Financing Type</p>
+                                    <p style="color: #ccc; font-size: 12px; padding-top: 5px;">-</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 14px;">Loan Officer Name</p>
+                                    <p style="color: #ccc; font-size: 12px; padding-top: 5px;">Jcob Miler</p>
+                                </div>
+                                <div>
+                                    <p style="font-size: 14px;">Mortage Co. Name:</p>
+                                    <p style="color: #ccc; font-size: 12px; padding-top: 5px;">The RadBrad</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <img src="./image/playlist.svg" alt="note">
+                                        <p>Important Notes</p>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <button
+                                            style="height: 20px; width: 20px; border-radius: 50%; background: #28a745; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">+</button>
+                                        <Button style="height: 30px; background: #fff; border: none;"><img
+                                                src="./image/down-arrow.svg" alt="arrow" style="height: 20px;"></Button>
+                                    </div>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; background: #f6fcf8; border: 2px solid #a7e1b4; border-radius: 5px; padding: 10PX; gap: 10px;">
+                                    <p style="font-size: 14px;">Call only in Evening after 8:00 PM.</p>
+                                    <div style="display: flex; gap: 10px;">
+                                        <img src="./image/edit.svg" alt="edit" style="height: 20px;">
+                                        <img src="./image/delete.svg" alt="edit" style="height: 20px;">
+                                    </div>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; background: #f6fcf8; border: 2px solid #a7e1b4; border-radius: 5px; padding: 10PX; gap: 10px;">
+                                    <div>
+                                        <p style="font-size: 14px;">Schedule meeting only on Sunday Between</p>
+                                        <p style="font-size: 16px;">4:00 PM - 6:00PM</p>
+                                    </div>
+                                    <div style="display: flex; gap: 10px;">
+                                        <img src="./image/edit.svg" alt="edit" style="height: 20px;">
+                                        <img src="./image/delete.svg" alt="edit" style="height: 20px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <img src="./image/circle-user.svg" alt="user" style="height: 30px;">
+                                        <p>Personal details</p>
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <Button style="height: 30px; background: #fff; border: none;"><img
+                                                src="./image/down-arrow.svg" alt="arrow" style="height: 20px;"></Button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <img src="./image/mail-outline.svg" alt="mail" style="height: 20px;">
+                                        <p style="font-size: 14px;">smith_do12@gmail.com</p>
+                                        <img src="./image/check.svg" alt="check" style="height: 15px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <img src="./image/edit.svg" alt="edit" style="height: 20px;">
+                                        <button
+                                            style="height: 15px; width: 15px; border-radius: 50%; background: #fff; color: #515151; border: 2px solid #515151; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; padding-top: 1px;">+</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <img src="./image/call.svg" alt="mail" style="height: 20px;">
+                                        <p style="font-size: 14px;">(925)-374-3975 <span
+                                                style="font-size: 12px; color: rgb(150, 150, 150); font-weight: 600;">(Personal)</span>
+                                            <br> (925)-374-3555<span
+                                                style="font-size: 12px; color: rgb(150, 150, 150); font-weight: 600;">(Work)</span>
+                                        </p>
+                                        <img src="./image/check.svg" alt="check" style="height: 15px;">
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <img src="./image/edit.svg" alt="edit" style="height: 20px;">
+                                        <button
+                                            style="height: 15px; width: 15px; border-radius: 50%; background: #fff; color: #515151; border: 2px solid #515151; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; padding-top: 1px;">+</button>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                    <div style="display: flex; align-items: center; gap: 10px;">
+                                        <img src="./image/home.svg" alt="mail" style="height: 20px;">
+                                        <p style="font-size: 14px;"> 774 W Boyd Rd, Leasant Hill, CA 94523 <br><span
+                                                style="font-size: 12px; color: rgb(150, 150, 150); font-weight: 600;">(Personal
+                                                Home)</span> <img src="./image/check.svg" alt="check"
+                                                style="height: 15px;"> </p>
+
+                                    </div>
+                                    <div style="display: flex; align-items: center; gap: 5px;">
+                                        <img src="./image/edit.svg" alt="edit" style="height: 20px;">
+                                        <button
+                                            style="height: 15px; width: 15px; border-radius: 50%; background: #fff; color: #515151; border: 2px solid #515151; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; padding-top: 1px;">+</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <img src="./image/user-multi1.svg" alt="user" style="height: 20px;">
+                                            <p>Connected Lead</p>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <button
+                                                style="height: 20px; width: 20px; border-radius: 50%; background: #28a745; color: #fff; border: none; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">+</button>
+                                            <Button style="height: 30px; background: #fff; border: none;"><img
+                                                    src="./image/down-arrow.svg" alt="arrow"
+                                                    style="height: 20px;"></Button>
+                                        </div>
+                                    </div>
+                                    <div style="border-radius: 5px; border: 2px solid #ccc;">
+                                        <div class="user-header" style="padding: 10px;">
+                                            <div class="user-info">
+                                                <div class="avatar"></div>
+                                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                                    <div>
+                                                        <h4>Alice Johnson Do</h4>
+                                                    </div>
+                                                    <div class="user-meta">
+                                                        <div class="user-age">
+                                                            <p>40</p>
+                                                            <img src="./image/arrow-triangle.svg" alt="arrow"
+                                                                style="height: 20px;">
+                                                        </div>
+                                                        <img src="./image/star.svg" alt="star">
+                                                        <img src="./image/star.svg" alt="star">
+                                                        <p class="user-role">BUYER</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="edit-button">
+                                                <img src="./image/minus.svg" alt="edit">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div style="padding: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <img src="./image/mail-outline.svg" alt="mail" style="height: 20px;">
+                                                <p style="font-size: 14px;">smith_do12@gmail.com</p>
+                                                <img src="./image/check.svg" alt="check" style="height: 15px;">
+                                            </div>
+
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <img src="./image/call.svg" alt="mail" style="height: 20px;">
+                                                <p style="font-size: 14px;">(925)-374-3975 <span
+                                                        style="font-size: 12px; color: rgb(150, 150, 150); font-weight: 600;">(Personal)</span>
+                                                    <br> (925)-374-3555<span
+                                                        style="font-size: 12px; color: rgb(150, 150, 150); font-weight: 600;">
+                                                        (Work)</span>
+                                                </p>
+                                                <img src="./image/check.svg" alt="check" style="height: 15px;">
+                                            </div>
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <img src="./image/home.svg" alt="mail" style="height: 20px;">
+                                                <p style="font-size: 14px;"> 774 W Boyd Rd, Leasant Hill, CA 94523
+                                                    <br><span
+                                                        style="font-size: 12px; color: rgb(150, 150, 150); font-weight: 600;">(Personal
+                                                        Home)</span> <img src="./image/check.svg" alt="check"
+                                                        style="height: 15px;">
+                                                </p>
+                                            </div>
+                                            <hr>
+                                            <div style="display: flex; gap: 10px; align-items: center;">
+                                                <img src="./image/user-multi2.svg" alt="user" style="height: 20px;">
+                                                <p>Relation with lead: <strong>Spouse</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="display: flex; align-items: center; justify-content: space-between; ">
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <img src="./image/user-details.svg" alt="user" style="height: 20px;">
+                                            <p>Realtor details</p>
+                                        </div>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <Button style="height: 30px; background: #fff; border: none;"><img
+                                                    src="./image/down-arrow.svg" alt="arrow"
+                                                    style="height: 20px;"></Button>
+                                        </div>
+                                    </div>
+                                    <p style="font-size: 14px;">Realtor: <strong> Mark Struert</strong></p>
+                                    <p style="font-size: 14px;">Concierge: <strong style="color: #28a745;"> Noman
+                                            Stevenson</strong></p>
+                                    <p style="font-size: 14px;">Office Manager: <strong> David Stillman</strong></p>
+                                    <p style="font-size: 14px;">Concierge Manager: <strong> Helly Welington</strong></p>
+                                    <button
+                                        style="width: 100%; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; border: 2px solid #ccc; border-radius: 5px;">
+                                        <img src="./image/sync.svg" alt="sync" style="height: 20px;">
+                                        <p>Transfer Lead</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recently-card">
+                        <div class="property-tabs-container">
+                            <div class="property-tabs-header">
+                                <button class="property-tab active" data-property-tab="property-recently">Recently <span
+                                        class="property-badge">2</span></button>
+                                <button class="property-tab" data-property-tab="property-homes">Homes</button>
+                                <button class="property-tab" data-property-tab="property-saved">Saved <span
+                                        class="property-badge">1</span></button>
+                                <button class="property-tab" data-property-tab="property-compare">Compare</button>
+                                <button class="property-tab" data-property-tab="property-showing">Showing</button>
+                                <button class="property-tab" data-property-tab="property-contact-agent">Contact
+                                    Agent</button>
+                            </div>
+
+                            <div class="property-tabs-content">
+                                <div class="property-tab-content active" id="property-recently">
+                                    <div class="property-slider-container">
+                                        <div>
+                                            <div class="property-card">
+                                                <div class="property-card-header">
+                                                    <p class="tooltip" data-tooltip="Mon, Aug 4, 2019, 1:20 PM">2 days
+                                                        ago</p>
+                                                </div>
+                                                <div class="property-card-body">
+                                                    <h3>$919,000</h3>
+                                                    <p>4 Bd | 3 Ba | 2,377 Sqft</p>
+                                                    <p>4 Edie Ct, Pleasant Hill, CA 94523</p>
+                                                </div>
+                                            </div>
+                                            <p style="padding: 10px;">Total Visits: <span style="font-weight: 700;">3
+                                                    times</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="property-card">
+                                                <div class="property-card-header">
+                                                    <p class="tooltip" data-tooltip="Fri, Aug 1, 2019, 3:40 PM">5 days
+                                                        ago</p>
+                                                </div>
+                                                <div class="property-card-body">
+                                                    <h3>$750,000</h3>
+                                                    <p>3 Bd | 2 Ba | 1,797 Sqft</p>
+                                                    <p>2971 Bonnie Ln, Pleasant Hill, CA 94523</p>
+                                                </div>
+                                            </div>
+                                            <p style="padding: 10px;">Total Visits: <span style="font-weight: 700;">3
+                                                    times</span></p>
+                                        </div>
+                                        <div>
+                                            <div class="property-card">
+                                                <div class="property-card-header">
+                                                    <p class="tooltip" data-tooltip="Sun, Jul 29, 2019, 1:20 PM">8 days
+                                                        ago</p>
+                                                </div>
+                                                <div class="property-card-body">
+                                                    <h3>$987,000</h3>
+                                                    <p>4 Bd | 2 Ba | 2,061 Sqft</p>
+                                                    <p>241 Netherby Pl, Pleasant Hill, CA 94523</p>
+                                                </div>
+                                            </div>
+                                            <p style="padding: 10px;">Total Visits: <span style="font-weight: 700;">3
+                                                    times</span></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
+                                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <hr>
+                                            <div style="display: flex; gap: 5px; align-items: center;" class="tooltip"
+                                                data-tooltip="Total time spend on HouzQuest">
+                                                <img src="./image/timer-black.svg" alt="timer">
+                                                <p>02:50:35</p>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 10px; align-items: center;">
+                                            <p>Total 10 Properties</p>
+                                            <button
+                                                style="padding: 5px 10px; border: 2px solid #ccc; color: #ccc; border-radius: 5px;">
+                                                < </button>
+                                                    <button
+                                                        style="padding: 5px 10px; background: #e6efff; color: #031784; border: 2px solid #031784; border-radius: 5px;">
+                                                        > </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="property-tab-content" id="property-homes">
+                                    <div class="property-slider-container">
+                                        <div>
+                                            <div class="property-card">
+                                                <div style="display: flex; justify-content: space-between;">
+                                                    <div class="property-card-header" style="background: #ffcc33;">
+                                                        <p>Hot</p>
+                                                    </div>
+                                                    <div>
+                                                        <span class="icon"
+                                                        style="margin-right: 10px; background: #000; border-radius: 5px;"><span
+                                                            class="iconify" data-icon="material-symbols:info-outline-rounded"
+                                                            data-inline="false"></span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="property-card-body">
+                                                    <h3>$919,000</h3>
+                                                    <p>4 Bd | 3 Ba | 2,377 Sqft</p>
+                                                    <p>4 Edie Ct, Pleasant Hill, CA 94523</p>
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 14px; color: #ccc;">Saved 2 days ago</p>
+                                            <div style="display: flex; gap: 5px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px;" class="tooltip"
+                                            data-tooltip="Size of Home, Price, Kitchen, Bedrooms, Backyard, Location, School, Living Rooms, Fireplace, Disability Features">
+                                                <div style="border:2px solid #0055fd; width: fit-content; font-size: 12px; padding: 2px; border-radius: 5px; color: #0055fd; font-weight: 600; background: #99cfff3e;">Size Of Home</div>
+                                                <div style="border:2px solid #0055fd; width: fit-content; font-size: 12px; padding: 2px; border-radius: 5px; color: #0055fd; font-weight: 600; background: #99cfff3e;">Price</div>
+                                                <div style="border:2px solid #0055fd; width: fit-content; font-size: 12px; padding: 2px; border-radius: 5px; color: #0055fd; font-weight: 600; background: #99cfff3e;">+8 More</div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="property-card">
+                                                <div style="display: flex; justify-content: space-between;">
+                                                    <div class="property-card-header" style="background: #0033cc;">
+                                                        <p> New</p>
+                                                    </div>
+                                                    <div>
+                                                        <span class="icon"
+                                                        style="margin-right: 10px; background: #000; border-radius: 5px;"><span
+                                                            class="iconify" data-icon="material-symbols:info-outline-rounded"
+                                                            data-inline="false"></span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="property-card-body">
+                                                    <h3>$750,000</h3>
+                                                    <p>3 Bd | 2 Ba | 1,797 Sqft</p>
+                                                    <p>2971 Bonnie Ln, Pleasant Hill, CA 94523</p>
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 14px; color: #ccc;">Saved 10 days ago</p>
+                                            <div style="display: flex; gap: 5px; flex-wrap: wrap; padding-top: 10px; padding-bottom: 10px;">
+                                                <div style="border:2px solid #0055fd; width: fit-content; font-size: 12px; padding: 2px; border-radius: 5px; color: #0055fd; font-weight: 600; background: #99cfff3e;">Location View</div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div
+                                        style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
+                                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <div style="display: flex; gap: 1px; align-items: center;">
+                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <p>10</p>
+                                            </div>
+                                            <hr>
+                                            <div style="display: flex; gap: 5px; align-items: center;" class="tooltip"
+                                                data-tooltip="Total time spend on HouzQuest">
+                                                <img src="./image/timer-black.svg" alt="timer">
+                                                <p>02:50:35</p>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; gap: 10px; align-items: center;">
+                                            <p>Total 10 Properties</p>
+                                            <button
+                                                style="padding: 5px 10px; border: 2px solid #ccc; color: #ccc; border-radius: 5px;">
+                                                < </button>
+                                                    <button
+                                                        style="padding: 5px 10px; background: #e6efff; color: #031784; border: 2px solid #031784; border-radius: 5px;">
+                                                        > </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="activity-tabs-container">
+                            <div class="activity-tabs-header">
+                                <button class="activity-tab active" data-activity-tab="activity-activity">Activity <span
+                                        class="activity-badge">2</span></button>
+                                <button class="activity-tab" data-activity-tab="activity-email">Email</button>
+                                <button class="activity-tab" data-activity-tab="activity-call">Call <span
+                                        class="activity-badge">1</span></button>
+                                <button class="activity-tab" data-activity-tab="activity-text">Text</button>
+                                <button class="activity-tab" data-activity-tab="activity-notes">Notes</button>
+                                <button class="activity-tab" data-activity-tab="activity-calendar"> Calendar</button>
+                                <button class="activity-tab" data-activity-tab="activity-analytics"> Analytics</button>
+                            </div>
+                            <div class="activity-tabs-content">
+                                <div class="activity-tab-content active" id="activity-activity">
+                                    <div class="container">
+                                        <!-- Email Message -->
+                                        <div class="card email">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #f51841; "><span
+                                                        class="iconify" data-icon="mdi:email-outline"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <strong>Mark Struert > Smith Do</strong>
+                                                    <span>Thu, Sep 15, 2019, 4:41 PM (Just now)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <h3>Welcome! <span class="badge">Opened</span> <span
+                                                        class="badge">Clicked</span></h3>
+                                                <p>Hello Smith, We're thrilled to have you on board and we look forward
+                                                    to delivering an awesome experience. At any point in this trial, if
+                                                    you need help with something, just let me know.</p>
+                                                <div class="signature">
+                                                    <img src="https://via.placeholder.com/50" alt="Profile Picture">
+                                                    <div>
+                                                        <p><strong>Mark Struert</strong></p>
+                                                        <p>(407) 487-4781</p>
+                                                        <p>XYZ Company</p>
+                                                        <p><a href="https://search.XYZ.com">https://search.XYZ.com</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Chat Message -->
+                                        <div class="card chat">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #75c2c8;"><span
+                                                        class="iconify" data-icon="mdi:chat-outline"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <strong>Norman Stevenson > Smith Do</strong>
+                                                    <span>Sat, Sep 7, 2019, 4:30 PM (10 min. ago)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <p>Hi Smith, hope you're having a good day! Just checking in on the home
+                                                    search. Are you looking for homes 🏠 near Pleasant Hill, CA?</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Notes -->
+                                        <div class="card notes">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #ffb901;"><span
+                                                        class="iconify" data-icon="mdi:notebook-outline"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <strong>Norman Stevenson > Smith Do</strong>
+                                                    <span>Wed, Aug 21, 2019, 3:00 PM (2 hours ago)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <p>Call only in Evening after 8PM.</p>
+                                                <p>Schedule meeting only on Sunday between 4PM - 6PM.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Status Change -->
+                                        <div class="card status">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #4ac366;"><span
+                                                        class="iconify" data-icon="mdi:check-circle-outline"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <strong>Lead status changed by Norman Stevenson</strong>
+                                                    <span>Mon, Aug 19, 2019, 9:30 AM (Yesterday)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <p>Status changed from New to In Progress.</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Call -->
+                                        <div class="card call">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #0055fd;"><span
+                                                        class="iconify" data-icon="mdi:phone-outline"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <strong>Norman Stevenson > Smith Do</strong>
+                                                    <span>Fri, Aug 5, 2019, 11:00 AM (12 days ago)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <p>Incoming Call</p>
+                                                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                                    <p>Call Duration: 00:20:50</p>
+                                                    <p>Call Outcome: <span style="color: #28a745;"> Answered</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Assign to -->
+                                        <div class="card call">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #4ac366;"><span
+                                                        class="iconify" data-icon="mage:user-check"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <p
+                                                        style="display: flex; font-size: 14px; gap: 5px; flex-wrap: wrap;">
+                                                        <strong>Smith Do </strong>has assign to concierge <strong>
+                                                            Norman Stevenson</strong>
+                                                    </p>
+                                                    <span>Mon, Aug 1, 2019, 11:00 AM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Added by -->
+                                        <div class="card call">
+                                            <div class="card-header">
+                                                <span class="icon"
+                                                    style="margin-right: 10px; background: #4ac366;"><span
+                                                        class="iconify" data-icon="mingcute:user-add-2-line"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <p
+                                                        style="display: flex; font-size: 14px; gap: 5px; flex-wrap: wrap;">
+                                                        <strong>Smith Do </strong>added by realtor <strong> Mark
+                                                            Struet</strong>
+                                                    </p>
+                                                    <span>Wed, Jul 31, 2019, 11:00 AM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Property Inquiry -->
+                                        <div class="card status">
+                                            <div class="card-header">
+                                                <span class="icon" style="margin-right: 10px; background: #000;"><span
+                                                        class="iconify" data-icon="ph:image-bold"
+                                                        data-inline="false" style="color: #fff;"></span></span>
+                                                <div class="details">
+                                                    <strong>Property Inquiry</strong>
+                                                    <span>Wed, Jul 31, 2019, 9:30 AM (Yesterday)</span>
+                                                </div>
+                                            </div>
+                                            <div class="card-content">
+                                                <div
+                                                    style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between;">
+                                                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                                                        <img src="./image/house.jpg" alt="house"
+                                                            style="height: 100px; width: 150px; border-radius: 5px;">
+                                                        <div>
+                                                            <p style="font-size: 14px;"><strong>$750K</strong> MLS:
+                                                                #05800542</p>
+                                                            <p style="font-size: 14px;">2971 Bonnie Ln, Pleasant Hill,
+                                                                CA
+                                                                94523</p>
+                                                            <div style="display: flex; gap: 10px;">
+                                                                <div style="display: flex; gap: 5px;">
+                                                                    <img src="./image/bed.svg"
+                                                                        style="height: 15px; margin-top: 2px;">
+                                                                    <p style="font-size: 14px;"> 5 bd</p>
+                                                                </div>
+                                                                <div style="display: flex; gap: 5px;">
+                                                                    <img src="./image/bath.svg"
+                                                                        style="height: 15px; margin-left: 10px; margin-top: 2px;">
+                                                                    <p style="font-size: 14px;">4 ba</p>
+                                                                </div>
+                                                                <div style="display: flex; gap: 5px;">
+                                                                    <img src="./image/square.svg"
+                                                                        style="height: 15px; margin-left: 10px; margin-top: 2px;">
+                                                                    <p style="font-size: 14px;">4.500 Sqft</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        style="display: flex; justify-content: center; align-items: center;">
+                                                        <button
+                                                            style="padding: 10px; border-radius: 5px; border: 2px solid #ccc;">
+                                                            View on Houzquest
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questions">
+                        <div
+                            style="display: flex; gap: 5px; align-items: center; padding: 15px; background-color: #fff;">
+                            <span class="icon"><span class="iconify" style="color: #000;"
+                                    data-icon="mage:message-question-mark-round" data-inline="false"></span></span>
+                            <p style="font-weight: 600;">Pre-Qualified Duestions</p>
+                        </div>
+                        <hr>
+                        <div
+                            style="display: flex; gap: 5px; align-items: center; padding: 15px; background-color: #fff;">
+                            <span class="icon"><span class="iconify" style="color: #000;"
+                                    data-icon="ic:twotone-headset-mic" data-inline="false"></span></span>
+                            <p style="font-weight: 600;">Buyer's Consultation</p>
+                        </div>
+                        <hr>
+                        <div
+                            style="display: flex; gap: 5px; align-items: center; padding: 15px; background-color: #fff;">
+                            <span class="icon"><span class="iconify" style="color: #000;"
+                                    data-icon="material-symbols:info-outline-rounded" data-inline="false"></span></span>
+                            <p style="font-weight: 600;">Client Information</p>
+                        </div>
+                        <hr>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <div style="display: flex; gap: 5px; align-items: center; "> <span
+                                            class="icon"><span class="iconify" style="color: #000;"
+                                                data-icon="carbon:task" data-inline="false"></span></span>
+                                        <p style="font-weight: 600;">To Do Task</p>
+                                    </div>
+                                    <div style="display: flex;"><span class="icon"><span class="iconify"
+                                                style="color: #4ac366;" data-icon="gridicons:add"
+                                                data-inline="false"></span></span>
+                                        <span class="icon">
+                                            <span class="iconify" data-icon="fluent:ios-arrow-right-24-filled"
+                                                style="color: #000;"></span>
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="upcoming-tabs-container">
+                                        <div class="upcoming-tabs-header">
+                                            <button class="upcoming-tab active"
+                                                data-upcoming-tab="upcoming-upcoming">Upcoming</button>
+                                            <button class="upcoming-tab"
+                                                data-upcoming-tab="upcoming-overdue">Overdue</button>
+                                            <button class="upcoming-tab"
+                                                data-upcoming-tab="upcoming-completed">Completed</button>
+                                        </div>
+                                        <div class="upcoming-tabs-content">
+                                            <div class="upcoming-tab-content active" id="upcoming-upcoming">
+                                                <div class="task-list">
+                                                    <!-- Visible Task Cards (first 3) -->
+                                                    <div class="task-card">
+                                                        <div
+                                                            style="display: flex; justify-content: space-between; align-items: first baseline;">
+                                                            <div class="task-header">
+                                                                <span class="task-title">Follow Up Call</span>
+                                                                <span class="task-priority">High</span>
+                                                            </div>
+                                                            <div class="task-actions">
+                                                                <button class="edit-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="fluent:edit-16-regular"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                                <button class="delete-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="ic:outline-delete"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <p class="task-date-time">08/14/2019, 9:30 AM</p>
+                                                        <p class="task-creator">Created by: Norman Stevenson</p>
+                                                    </div>
+                                                    <div class="task-card">
+                                                        <div
+                                                            style="display: flex; justify-content: space-between; align-items: first baseline;">
+                                                            <div class="task-header">
+                                                                <span class="task-title">Showing</span>
+                                                                <span class="task-priority">High</span>
+                                                            </div>
+                                                            <div class="task-actions">
+                                                                <button class="edit-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="fluent:edit-16-regular"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                                <button class="delete-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="ic:outline-delete"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <p class="task-date-time">08/14/2019, 9:30 AM</p>
+                                                        <p class="task-creator">Created by: Norman Stevenson</p>
+                                                    </div>
+                                                    <div class="task-card">
+                                                        <div
+                                                            style="display: flex; justify-content: space-between; align-items: first baseline;">
+                                                            <div class="task-header">
+                                                                <span class="task-title">Email Listing</span>
+                                                                <span class="task-priority">High</span>
+                                                            </div>
+                                                            <div class="task-actions">
+                                                                <button class="edit-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="fluent:edit-16-regular"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                                <button class="delete-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="ic:outline-delete"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <p class="task-date-time">08/14/2019, 9:30 AM</p>
+                                                        <p class="task-creator">Created by: Norman Stevenson</p>
+                                                    </div>
+
+                                                    <!-- Hidden Task Cards (rest) -->
+                                                    <div class="task-card hidden">
+                                                        <div
+                                                            style="display: flex; justify-content: space-between; align-items: first baseline;">
+                                                            <div class="task-header">
+                                                                <span class="task-title">Text Message</span>
+                                                            </div>
+                                                            <div class="task-actions">
+                                                                <button class="edit-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="fluent:edit-16-regular"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                                <button class="delete-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="ic:outline-delete"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <p class="task-date-time">08/14/2019, 9:30 AM</p>
+                                                        <p class="task-creator">Created by: Norman Stevenson</p>
+                                                    </div>
+                                                    <div class="task-card hidden">
+                                                        <div
+                                                            style="display: flex; justify-content: space-between; align-items: first baseline;">
+                                                            <div class="task-header">
+                                                                <span class="task-title">Thank You</span>
+                                                            </div>
+                                                            <div class="task-actions">
+                                                                <button class="edit-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="fluent:edit-16-regular"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                                <button class="delete-btn">
+                                                                    <span class="icon"><span class="iconify"
+                                                                            style="color: #000;"
+                                                                            data-icon="ic:outline-delete"
+                                                                            data-inline="false"></span></span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <p class="task-date-time">08/14/2019, 9:30 AM</p>
+                                                        <p class="task-creator">Created by: Norman Stevenson</p>
+                                                    </div>
+
+                                                    <!-- View All / Hide Tasks Button -->
+                                                    <div class="task-card" style="cursor: pointer;">
+                                                        <p style="text-align: center;" id="toggle-tasks-btn">
+                                                            View All 5 Tasks
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Dialog Box -->
+                                                <div id="confirmation-dialog" class="dialog hidden">
+                                                    <div class="dialog-content">
+                                                        <p>Are you sure you want to delete this task?</p>
+                                                        <div class="dialog-actions">
+                                                            <button id="cancel-btn">Cancel</button>
+                                                            <button id="confirm-delete-btn">Delete</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <div style="display: flex; gap: 5px; align-items: center; "> <span
+                                            class="icon"><span class="iconify" style="color: #000;"
+                                                data-icon="cuida:calendar-outline" data-inline="false"></span></span>
+                                        <p style="font-weight: 600;">Appointments</p>
+                                    </div>
+                                    <div style="display: flex;"><span class="icon"><span class="iconify"
+                                                style="color: #4ac366;" data-icon="gridicons:add"
+                                                data-inline="false"></span></span>
+                                        <span class="icon">
+                                            <span class="iconify" data-icon="fluent:ios-arrow-right-24-filled"
+                                                style="color: #000;"></span>
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="accordion-content">
+                                    <div class="appointment-tabs-container">
+                                        <div class="appointment-tabs-header">
+                                            <button class="appointment-tab active"
+                                                data-appointment-tab="appointment-upcoming">Upcoming</button>
+                                            <button class="appointment-tab"
+                                                data-appointment-tab="appointment-postAppointments">Post
+                                                Appointments</button>
+                                        </div>
+                                        <div class="appointment-tabs-content">
+                                            <div class="appointment-tab-content active" id="appointment-upcoming">
+                                                No Upcoming Appointments
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <div style="display: flex; gap: 5px; align-items: center; "> <span
+                                            class="icon"><span class="iconify" style="color: #000;"
+                                                data-icon="icon-park-outline:notes" data-inline="false"></span></span>
+                                        <p style="font-weight: 600;">Offers Written</p>
+                                    </div>
+                                    <div style="display: flex;"><span class="icon"><span class="iconify"
+                                                style="color: #4ac366;" data-icon="gridicons:add"
+                                                data-inline="false"></span></span>
+                                        <span class="icon">
+                                            <span class="iconify" data-icon="fluent:ios-arrow-right-24-filled"
+                                                style="color: #000;"></span>
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Details about Offers Written.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <div style="display: flex; gap: 5px; align-items: center; "> <span
+                                            class="icon"><span class="iconify" style="color: #000;" data-icon="uil:bag"
+                                                data-inline="false"></span></span>
+                                        <p style="font-weight: 600;">Contract</p>
+                                    </div>
+                                    <div style="display: flex;"><span class="icon"><span class="iconify"
+                                                style="color: #4ac366;" data-icon="gridicons:add"
+                                                data-inline="false"></span></span>
+                                        <span class="icon">
+                                            <span class="iconify" data-icon="fluent:ios-arrow-right-24-filled"
+                                                style="color: #000;"></span>
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Details about Contract.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <div style="display: flex; gap: 5px; align-items: center; "> <span
+                                            class="icon"><span class="iconify" style="color: #000;"
+                                                data-icon="material-symbols:sell-outline"
+                                                data-inline="false"></span></span>
+                                        <p style="font-weight: 600;">Sold</p>
+                                    </div>
+                                    <div style="display: flex;"><span class="icon"><span class="iconify"
+                                                style="color: #4ac366;" data-icon="gridicons:add"
+                                                data-inline="false"></span></span>
+                                        <span class="icon">
+                                            <span class="iconify" data-icon="fluent:ios-arrow-right-24-filled"
+                                                style="color: #000;"></span>
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Details about Sold.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <button class="accordion-header">
+                                    <div style="display: flex; gap: 5px; align-items: center; "> <span
+                                            class="icon"><span class="iconify" style="color: #000;"
+                                                data-icon="lucide:list" data-inline="false"></span></span>
+                                        <p style="font-weight: 600;">Listing</p>
+                                    </div>
+                                    <div style="display: flex;"><span class="icon"><span class="iconify"
+                                                style="color: #4ac366;" data-icon="gridicons:add"
+                                                data-inline="false"></span></span>
+                                        <span class="icon">
+                                            <span class="iconify" data-icon="fluent:ios-arrow-right-24-filled"
+                                                style="color: #000;"></span>
+                                        </span>
+                                    </div>
+                                </button>
+                                <div class="accordion-content">
+                                    <p>Details about Listing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="showing">Content for Showing</div>
+                <div class="tab-pane" id="in-contract">Content for In Contract</div>
+                <div class="tab-pane" id="sold">Content for Sold</div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="LeadsUser.js"></script>
+</body>
+
+</html>
