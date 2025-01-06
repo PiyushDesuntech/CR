@@ -71,7 +71,7 @@ body {
         color: #fff;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
         transition: right 0.3s ease-in-out;
-        padding: 20px;
+        /* padding: 20px; */
         display: flex;
         flex-direction: column;
         gap: 10px;
@@ -103,8 +103,8 @@ body {
     }
 
     .profile-pic {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         background-color: #ccc;
         border-radius: 50%;
         margin-left: 10px;
@@ -112,6 +112,15 @@ body {
     }
     .profile-container .menu {
         width: 100px;
+    }
+
+    .profile-container{
+        background:  #3498db;
+        /* border-radius: 10px; */
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
     }
 
 }
@@ -626,9 +635,18 @@ body {
 }
 
 
-@media (max-width: 1008px) {
+@media (max-width: 1160px) {
     .container-grid {
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .container-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0px;
     }
 }
 @media (max-width: 768px) {
@@ -643,12 +661,7 @@ body {
         padding: 8px 16px;
     }
 
-    .container-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 0px;
-    }
+
 }
 
 .recently-card {
@@ -818,7 +831,7 @@ body {
 .activity-tabs-header {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 20px;
     justify-content: center;
 }
@@ -835,6 +848,7 @@ body {
     max-width: 150px;
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 
 .activity-tab.active {
@@ -867,6 +881,46 @@ body {
 .activity-tab-content.active {
     display: block;
 }
+.filter-container {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  z-index: 10;
+  width: 150px;
+}
+
+.dropdown-menu label {
+  display: block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu label:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu input {
+  margin-right: 8px;
+}
+
 @media (max-width: 1200px) {
     .property-slider-container {
         /* flex-wrap: nowrap;
@@ -926,6 +980,124 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+.property-compare-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+@media (max-width: 1220px) {
+    .property-compare-content{
+       
+        grid-template-columns: 1fr;
+        
+    }
+}
+
+.comparison-container {
+    width: 100%;
+    max-width: 600px;
+    /* margin: 20px auto; */
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comparison-container h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
+  
+  .comparison-container p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .comparison-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  .comparison-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    justify-content: space-between;
+  }
+  .comparision-content-item{
+    display: flex;
+  }
+  @media (max-width: 600px) {
+    .comparision-content-item{
+        flex-wrap: wrap;
+    }
+  }
+  
+  .comparison-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .comparison-item img {
+    width: 100px;
+    height: 80px;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+  
+  .details h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .info {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .info span {
+    display: inline-block;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 480px) {
+    .comparison-item {
+      /* flex-direction: column; */
+      align-items: flex-start;
+      text-align: start;
+    }
+  
+    .comparison-item img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+  
+    .details {
+      align-items: center;
+    }
+  
+    .info {
+      justify-content: start;
+    }
+  }
 
 .tooltip {
     position: relative;
@@ -1253,7 +1425,7 @@ body {
   }
 
   .accordion {
-    max-width: 600px;
+    max-width: 100%;
     /* margin: 20px auto; */
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -1310,9 +1482,7 @@ body {
   
   
   @media (max-width: 768px) {
-    .accordion {
-      margin: 10px;
-    }
+   
   
     .accordion-header {
       font-size: 14px;
@@ -1387,3 +1557,722 @@ body {
 .appointment-tab-content.active {
     display: block;
 }
+
+/* The container for horizontal scrolling */
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping of content */
+    gap: 16px; /* Adds space between the cards */
+    padding: 10px;
+    box-sizing: border-box; /* Ensures padding is included in width */
+    max-width: 700px; /* Prevents it from growing infinitely */
+  }
+
+  
+  @media (max-width: 1440px) {
+    .horizontal-scroll-container {
+      max-width: 650px; /* Larger max width for desktops */
+    }
+  }
+  @media (max-width: 1280px) {
+    .horizontal-scroll-container {
+      max-width: 550px; /* Larger max width for desktops */
+    }
+  }
+  @media (max-width: 768px) {
+    .horizontal-scroll-container {
+      max-width: 700px; 
+    }
+  }
+  @media (max-width: 425px) {
+    .horizontal-scroll-container {
+      max-width: 380px; 
+    }
+  }
+  @media (max-width: 375px) {
+    .horizontal-scroll-container {
+      max-width: 330px; 
+    }
+  }
+  @media (max-width: 320px) {
+    .horizontal-scroll-container {
+      max-width: 280px; 
+    }
+  }
+
+  
+  /* The individual property cards */
+  .property-showing-card {
+    min-width: 300px; /* Fixed width for the cards */
+    flex-shrink: 0; /* Prevents shrinking */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+  }
+  .property-showing-card p{
+    display: flex;
+    white-space: wrap;
+  }
+  
+  /* Optional: Custom scrollbar styles */
+  .horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px; /* Scrollbar height */
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 4px;
+  }
+  
+  .horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Thumb color on hover */
+  }
+  
+  /* Button Style */
+.info-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+}
+.info-button:hover{
+    color: #4fbf6e;
+}
+
+/* Dialog Box Styles */
+/* Dialog Box Styles */
+.dialog-box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* On top of other content */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Dialog Content */
+.dialog-content-info {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 700px;
+    color: #000;
+    max-width: 90%; /* Make sure it doesn't overflow on small screens */
+}
+
+/* Close Button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .dialog-content-info {
+        width: 90%; /* Adjust the width on medium screens */
+        padding: 15px;
+    }
+
+    .close-button {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dialog-content-info {
+        width: 95%; /* Adjust the width on small screens */
+        padding: 10px;
+    }
+    .dialog-content-info a{
+        font-size: 12px;
+    }
+
+    .close-button {
+        font-size: 20px;
+    }
+
+    .dialog-box {
+        padding: 10px;
+    }
+
+}
+
+  /* Style for the side drawer */
+.drawer {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+  
+  .drawer h2 {
+    padding: 20px;
+  }
+  
+  .drawer p {
+    /* margin-left: 20px; */
+  }
+  
+  /* Style for the close button */
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #000;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* When the drawer is open, it has a width of 250px */
+  .drawer.open {
+    width: 450px;
+  }
+  
+  .analytics-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1200px) {  
+    .analytics-box{
+        grid-template-columns: 1fr 1fr;
+    }  
+  }
+  @media (max-width: 480px) {  
+    .analytics-box{
+        grid-template-columns: 1fr ;
+    }  
+  }
+input, select {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/* General styles for the form */
+/* Dialog and Overlay Styles */
+#offer-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+  width: 100%;
+  max-width: 400px; /* Ensures it doesn't exceed 400px width */
+}
+
+#dialog-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Form Styles */
+#offer-form {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#offer-form input,
+#offer-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#offer-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Buttons */
+#offer-form button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#offer-form button:hover {
+  opacity: 0.9;
+}
+
+#offer-form button[type="button"] {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+#offer-form button[type="submit"] {
+  background: #4ac366;
+  color: #fff;
+}
+
+/* Flexbox for buttons */
+#offer-form div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #offer-dialog {
+    width: 90%; /* Reduced width for smaller screens */
+    padding: 15px;
+  }
+
+  #offer-form {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  #offer-form button {
+    width: 100%; /* Buttons stack on smaller screens */
+    font-size: 16px;
+  }
+
+  #offer-form div {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #offer-dialog {
+    width: 90%; /* Even smaller width for mobile */
+    padding: 10px;
+  }
+
+  #offer-form {
+    padding: 10px;
+  }
+
+  #offer-form input,
+  #offer-form select {
+    font-size: 14px;
+  }
+
+  #offer-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #offer-form div {
+    gap: 10px; /* Ensure the buttons have space between them */
+  }
+}
+
+#contract-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+  width: 100%;
+  max-width: 400px; /* Ensures it doesn't exceed 400px width */
+}
+
+#dialog-overlay-contract {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Form Styles */
+#contract-form {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#contract-form input,
+#contract-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#contract-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Buttons */
+#contract-form button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#contract-form button:hover {
+  opacity: 0.9;
+}
+
+#contract-form button[type="button"] {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+#contract-form button[type="submit"] {
+  background: #4ac366;
+  color: #fff;
+}
+
+/* Flexbox for buttons */
+#contract-form div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #contract-dialog {
+    width: 90%; /* Reduced width for smaller screens */
+    padding: 15px;
+  }
+
+  #contract-form {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  #contract-form button {
+    width: 100%; /* Buttons stack on smaller screens */
+    font-size: 16px;
+  }
+
+  #contract-form div {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #contract-dialog {
+    width: 90%; /* Even smaller width for mobile */
+    padding: 10px;
+  }
+
+  #contract-form {
+    padding: 10px;
+  }
+
+  #contract-form input,
+  #contract-form select {
+    font-size: 14px;
+  }
+
+  #contract-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #contract-form div {
+    gap: 10px; /* Ensure the buttons have space between them */
+  }
+}
+
+/* Dialog overlay */
+.soldDialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Dialog box */
+.soldDialog-box {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  /* text-align: center; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+}
+
+/* Close button */
+.soldDialog-box .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.soldDialog-box .close-btn:hover {
+  color: #4ac366;
+}
+
+/* OK button */
+.soldDialog-box .ok-btn {
+  background-color: #4ac366;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.soldDialog-box .ok-btn:hover {
+  background-color: #3ca955;
+}
+
+
+#sold-dialog {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 1000;
+  width: 100%;
+  max-width: 600px; /* Ensures it doesn't exceed 400px */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Ensures scrollable content if it overflows */
+  max-height: 90vh; /* Prevents dialog from exceeding viewport height */
+}
+
+#dialog-overlay-sold {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#sold-form {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#sold-form input,
+#sold-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#sold-form label {
+  /* font-weight: bold; */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.sold-input-alignment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+#sold-form button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#sold-form button:hover {
+  opacity: 0.9;
+}
+
+#sold-form button[type="button"] {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+#sold-form button[type="submit"] {
+  background: #4ac366;
+  color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #sold-dialog {
+    width: 90%; /* Reduced width for tablets */
+    padding: 15px;
+  }
+
+  .sold-input-alignment {
+    grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+  }
+
+  #sold-form {
+    padding: 15px;
+  }
+
+  #sold-form button {
+    width: 100%; /* Full-width buttons */
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sold-dialog {
+    width: 90%; /* Even smaller width for mobile devices */
+    padding: 10px;
+  }
+
+  #sold-form {
+    padding: 10px;
+  }
+
+  #sold-form input,
+  #sold-form select {
+    font-size: 14px;
+  }
+
+  #sold-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+
+.soldDialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Dialog box */
+.soldDialog-box {
+  position: relative;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  /* text-align: center; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px;
+}
+
+/* Close button */
+.soldDialog-box .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.soldDialog-box .close-btn:hover {
+  color: #4ac366;
+}
+
