@@ -56,6 +56,49 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const editButton = document.querySelector(".edit-button img");
+  const modal = document.getElementById("editModal");
+  const closeButton = document.querySelector(".close-button");
+
+  // Show the modal
+  editButton.addEventListener("click", () => {
+      modal.style.display = "block";
+  });
+
+  // Hide the modal
+  closeButton.addEventListener("click", () => {
+      modal.style.display = "none";
+  });
+
+  // Hide the modal when clicking outside the modal content
+  window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+          modal.style.display = "none";
+      }
+  });
+
+  // Handle form submission
+  const editForm = document.getElementById("editForm");
+  editForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+      const role = document.getElementById("role").value;
+
+      console.log("Updated Details:", { name, age, role });
+
+      // Update the UI with new details (optional)
+      document.querySelector(".user-info h3").textContent = name;
+      document.querySelector(".user-age p").textContent = age;
+      document.querySelector(".user-role").textContent = role;
+
+      // Close the modal
+      modal.style.display = "none";
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
   const profilePicMobile = document.getElementById("profilePicMobile");
   const menu = document.getElementById("menuMobile");
 
@@ -154,6 +197,7 @@ function saveDetails() {
     alert("Please fill all fields before saving.");
   }
 }
+
 
 // Tab
 document.querySelectorAll(".tab").forEach((tab) => {
@@ -997,3 +1041,89 @@ function showConnectedCallUI() {
     showNumberPad();
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const noteModal = document.getElementById("editNoteModal");
+  const closeNoteButton = document.querySelector("#editNoteModal .close-button");
+  const noteTextarea = document.getElementById("note");
+  const noteForm = document.getElementById("editNoteForm");
+
+  let currentNoteId = null;
+
+  // Add event listener for edit buttons
+  const editButtons = document.querySelectorAll("img[alt='edit']");
+  editButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+          currentNoteId = event.target.id.replace("edit-", "note-");
+          const noteElement = document.querySelector(`#${currentNoteId} p`);
+          noteTextarea.value = noteElement.textContent;
+          noteModal.style.display = "block";
+      });
+  });
+
+  // Close the modal
+  closeNoteButton.addEventListener("click", () => {
+      noteModal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+      if (event.target === noteModal) {
+          noteModal.style.display = "none";
+      }
+  });
+
+  // Save the edited note
+  noteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (currentNoteId) {
+          const noteElement = document.querySelector(`#${currentNoteId} p`);
+          noteElement.textContent = noteTextarea.value;
+      }
+      noteModal.style.display = "none";
+  });
+
+  // Add event listener for delete buttons
+  const deleteButtons = document.querySelectorAll("img[alt='delete']");
+  deleteButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+          const noteId = event.target.id.replace("delete-", "note-");
+          const noteContainer = document.getElementById(noteId);
+
+          if (confirm("Are you sure you want to delete this note?")) {
+              noteContainer.remove();
+          }
+      });
+  });
+});
+
+
+const input = document.getElementById("currentPage");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+
+prevButton.addEventListener("click", () => {
+    const currentValue = parseInt(input.value, 10);
+    if (currentValue > 1) {
+        input.value = currentValue - 1;
+    }
+});
+
+nextButton.addEventListener("click", () => {
+    const currentValue = parseInt(input.value, 10);
+    const maxValue = parseInt(input.max, 10);
+    if (currentValue < maxValue) {
+        input.value = currentValue + 1;
+    }
+});
+
+input.addEventListener("input", () => {
+    const currentValue = parseInt(input.value, 10);
+    const minValue = parseInt(input.min, 10);
+    const maxValue = parseInt(input.max, 10);
+
+    if (currentValue < minValue) {
+        input.value = minValue;
+    } else if (currentValue > maxValue) {
+        input.value = maxValue;
+    }
+});
