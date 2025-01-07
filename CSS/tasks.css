@@ -307,6 +307,8 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #f4f4f4;
+    flex-wrap: wrap;
+    gap: 10px;
     /* border-bottom: 1px solid #ddd; */
 }
 
@@ -462,34 +464,77 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-  }
-  
-  .dialog-content {
+}
+
+.dialog-content {
     background: #fff;
     padding: 20px;
     border-radius: 8px;
+    width: 90%; /* Adjusted for smaller screens */
     max-width: 600px;
+    max-height: 90%; /* Limit height to 90% of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .dialog-actions {
+}
+
+.dialog-actions {
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
     gap: 20px;
-  }
+}
 
-  .task-form {
+.task-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 10px 0 15px 0;
-  }
-  #addTaskForm input, select {
+}
+
+#addTaskForm input,
+select {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
+    width: 100%; /* Ensure inputs take full width */
+}
+
+@media (max-width: 768px) {
+    .dialog-content {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 15px;
+    }
+
+    .task-form {
+        grid-template-columns: 1fr; /* Stack fields vertically */
+    }
+
+    .dialog-actions {
+        flex-direction: column;
+        gap: 10px; /* Adjust spacing for actions */
+        align-items: stretch;
+    }
+
+    #addTaskForm input,
+    select {
+        font-size: 14px; /* Adjust font size for readability on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .dialog-content {
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    h3 {
+        font-size: 16px; /* Adjust heading size */
+    }
+
+    .dialog-actions button {
+        font-size: 14px; /* Adjust button text size */
+    }
+}
 
   @media (max-width: 768px) {
     .task-slider-container {
@@ -502,11 +547,11 @@ body {
     .task-filters{
         width: 100%;
     }
-    .task-form {
+    /* .task-form {
        
         grid-template-columns: 1fr;
         
-      }
+      } */
   }
 
   .call-icon {
