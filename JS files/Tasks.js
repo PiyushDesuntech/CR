@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     taskCard.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-        <div style="display: flex; align-items: center">
+        <div style="display: flex; align-items: flex-start">
           <span style="margin-right: 10px;">
             <span class="iconify"
               data-icon="icon-park-solid:check-one"
