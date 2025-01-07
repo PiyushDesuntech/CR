@@ -154,10 +154,14 @@
                 </div>
                 <div class="welcome-message">
                     <h2 style="color: #333; text-align: center; margin-bottom: 40px;">Welcome</h2>
-                    <button id="quick-connects" class="action-btn"><span class="iconify" data-icon="ph:phone-disconnect" data-inline="false"
-                        style="color: #0055fd; font-size: 20px; margin: 0 5px 0 5px;"></span> <p>Quick Connects</p></button>
-                    <button id="number-pad" class="action-btn"> <span class="iconify" data-icon="ph:numpad" data-inline="false"
-                        style="color: #0055fd; font-size: 16px; font-weight: 600;"></span> <p>Number Pad</p></button>
+                    <button id="quick-connects" class="action-btn"><span class="iconify" data-icon="ph:phone-disconnect"
+                            data-inline="false" style="color: #0055fd; font-size: 20px; margin: 0 5px 0 5px;"></span>
+                        <p>Quick Connects</p>
+                    </button>
+                    <button id="number-pad" class="action-btn"> <span class="iconify" data-icon="ph:numpad"
+                            data-inline="false" style="color: #0055fd; font-size: 16px; font-weight: 600;"></span>
+                        <p>Number Pad</p>
+                    </button>
                 </div>
             </div>
         </div>
@@ -188,8 +192,8 @@
                         <li>Privacy Policy</li>
                         <li>Logout</li>
                     </ul>
-                    <div style="display: flex; gap: 20px; margin-bottom: 10px; flex-direction: column;"><span id="open-call-drawer"
-                            class="icon">📞</span>
+                    <div style="display: flex; gap: 20px; margin-bottom: 10px; flex-direction: column;"><span
+                            id="open-call-drawer" class="icon">📞</span>
                         <span class="icon">🔔</span>
                         <span class="icon">⚙️</span>
                     </div>
@@ -203,7 +207,8 @@
             </li>
             <li style="padding: 0 20px 0 20px;"><a href="#"> <img src="./image//text.svg" style="height: 25px;">Text</a>
             </li>
-            <li style="padding: 0 20px 0 20px;"><a href="tasks.html"><img src="./image//task.svg" style="height: 25px;">Task </a>
+            <li style="padding: 0 20px 0 20px;"><a href="tasks.html"><img src="./image//task.svg"
+                        style="height: 25px;">Task </a>
             </li>
             <li style="padding: 0 20px 0 20px;"><a href="#"><img src="./image//calender.svg"
                         style="height: 25px;">Calender </a></li>
@@ -233,10 +238,17 @@
                 <div class="tab" data-tab="sold">Sold</div>
             </div>
             <div class="pagination">
+                <button id="prev" class="icon-btn">
+                    <span class="iconify" data-icon="ic:round-arrow-back" data-inline="false"></span>
+                </button>
                 <span>Lead</span>
-                <input type="number" min="1" max="50" value="2">
+                <input id="currentPage" type="number" min="1" max="50" value="2" />
                 <span>/ 50</span>
+                <button id="next" class="icon-btn">
+                    <span class="iconify" data-icon="ic:round-arrow-forward" data-inline="false"></span>
+                </button>
             </div>
+
         </div>
         <div class="tab-content">
             <div class="tab-pane" id="archive">Content for Archive</div>
@@ -265,7 +277,7 @@
                                     </div>
                                 </div>
                                 <div class="edit-button">
-                                    <img src="./image/edit.svg" alt="edit">
+                                    <img src="./image/edit.svg" alt="edit" style="height: 15px;">
                                 </div>
                             </div>
                             <div class="action-buttons">
@@ -302,6 +314,30 @@
                                 </div>
                             </div>
                             <hr>
+                            <div id="editModal" class="modal">
+                                <div class="modal-content">
+                                    <span class="close-button">&times;</span>
+                                    <h2>Edit User Details</h2>
+                                    <form id="editForm">
+                                        <label for="name">Name:</label>
+                                        <input type="text" id="name" name="name" value="Smith Do" />
+
+                                        <label for="age">Age:</label>
+                                        <input type="number" id="age" name="age" value="30" />
+
+                                        <label for="role">Role:</label>
+                                        <select id="role" name="role">
+                                            <option value="BUYER" selected>BUYER</option>
+                                            <option value="SELLER">SELLER</option>
+                                            <option value="ADMIN">ADMIN</option>
+                                        </select>
+
+                                        <button type="submit"
+                                            style="width: 100%; background: #4ac366; color: #fff; padding: 10px; border-radius: 5px;">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+
                             <div class="schedule">
                                 <h4>CR - Schedule Tour</h4>
                                 <div class="schedule-meta">
@@ -313,42 +349,6 @@
                                         data-tooltip="Positive Conversation Tag Indicated(warm lead)">- Positive
                                         Conversation Tag...</span></p>
                             </div>
-                            <!-- <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                                <button
-                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
-                                    <p>Spanish</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
-                                </button>
-                                <button
-                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
-                                    <p>Invested</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
-                                </button>
-                                <button
-                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
-                                    <p>MDL Approved</p><img src="./image/close-dark.svg" alt="close"
-                                        style="height: 15px;">
-                                </button>
-                                <button
-                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
-                                    <p>Buyer</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
-                                </button>
-                                <button
-                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
-                                    <p>Showing</p><img src="./image/close-dark.svg" alt="close" style="height: 15px;">
-                                </button>
-                                <button
-                                    style="border-radius: 5px; display: flex; border: none; padding: 10px; gap: 10px;">
-                                    <p>Lender Approved</p><img src="./image/close-dark.svg" alt="close"
-                                        style="height: 15px;">
-                                </button>
-                                <button
-                                    style="border-radius: 5px; border: 2px solid #ccc; background: #fff; padding: 10px;">5
-                                    more</button>
-                                <button
-                                    style="border-radius: 5px; border: 2px solid #ccc; background: #fff; padding: 10px; display: flex; gap: 10px; align-items: center;"><img
-                                        src="./image/plus.svg" alt="plus" style="height: 18px;">
-                                    <p>New Tag</p>
-                                </button>
-                            </div> -->
                             <div id="tags-container" style="display: flex; flex-wrap: wrap; gap: 10px;">
                                 <!-- Tags -->
                                 <div class="tag">
@@ -529,15 +529,45 @@
                                                 src="./image/down-arrow.svg" alt="arrow" style="height: 20px;"></Button>
                                     </div>
                                 </div>
-                                <div
-                                    style="display: flex; justify-content: space-between; background: #f6fcf8; border: 2px solid #a7e1b4; border-radius: 5px; padding: 10PX; gap: 10px;">
+                                <!-- Note 1 -->
+                                <div id="note-1"
+                                    style="display: flex; justify-content: space-between; background: #f6fcf8; border: 2px solid #a7e1b4; border-radius: 5px; padding: 10px; gap: 10px;">
                                     <p style="font-size: 14px;">Call only in Evening after 8:00 PM.</p>
                                     <div style="display: flex; gap: 10px;">
-                                        <img src="./image/edit.svg" alt="edit" style="height: 20px;">
-                                        <img src="./image/delete.svg" alt="edit" style="height: 20px;">
+                                        <img id="edit-1" src="./image/edit.svg" alt="edit"
+                                            style="height: 20px; cursor: pointer;">
+                                        <img id="delete-1" src="./image/delete.svg" alt="delete"
+                                            style="height: 20px; cursor: pointer;">
                                     </div>
                                 </div>
-                                <div
+                                <div id="note-2"
+                                    style="display: flex; justify-content: space-between; background: #f6fcf8; border: 2px solid #a7e1b4; border-radius: 5px; padding: 10px; gap: 10px;">
+                                    <div>
+                                        <p style="font-size: 14px;">Schedule meeting only on Sunday Between</p>
+                                        <p style="font-size: 16px;">4:00 PM - 6:00PM</p>
+                                    </div>
+                                    <div style="display: flex; gap: 10px;">
+                                        <img id="edit-2" src="./image/edit.svg" alt="edit"
+                                            style="height: 20px; cursor: pointer;">
+                                        <img id="delete-2" src="./image/delete.svg" alt="delete"
+                                            style="height: 20px; cursor: pointer;">
+                                    </div>
+                                </div>
+
+                                <!-- Modal -->
+                                <div id="editNoteModal" class="modalEdit">
+                                    <div class="modal-content-edit">
+                                        <span class="close-button">&times;</span>
+                                        <h2>Edit Note</h2>
+                                        <form id="editNoteForm">
+                                            <label for="note" style="margin-top: 10px;">Edit Note:</label>
+                                            <textarea id="note" name="note" rows="4" cols="50"></textarea>
+                                            <button type="submit">Save</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- <div
                                     style="display: flex; justify-content: space-between; background: #f6fcf8; border: 2px solid #a7e1b4; border-radius: 5px; padding: 10PX; gap: 10px;">
                                     <div>
                                         <p style="font-size: 14px;">Schedule meeting only on Sunday Between</p>
@@ -547,7 +577,7 @@
                                         <img src="./image/edit.svg" alt="edit" style="height: 20px;">
                                         <img src="./image/delete.svg" alt="edit" style="height: 20px;">
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <hr>
                             <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -793,19 +823,23 @@
                                         style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
                                         <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="iconamoon:home" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="hugeicons:view" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="icon-park-outline:like" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="lets-icons:copy" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <hr>
@@ -1052,20 +1086,24 @@
                                     <div
                                         style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
                                         <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                            <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                           <div style="display: flex; gap: 1px; align-items: center;">
+                                                <span class="iconify" data-icon="iconamoon:home" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="hugeicons:view" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="icon-park-outline:like" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="lets-icons:copy" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <hr>
@@ -1133,20 +1171,24 @@
                                     <div
                                         style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
                                         <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                            <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                           <div style="display: flex; gap: 1px; align-items: center;">
+                                                <span class="iconify" data-icon="iconamoon:home" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="hugeicons:view" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="icon-park-outline:like" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="lets-icons:copy" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <hr>
@@ -1770,20 +1812,24 @@
                                     <div
                                         style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
                                         <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                            <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                           <div style="display: flex; gap: 1px; align-items: center;">
+                                                <span class="iconify" data-icon="iconamoon:home" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="hugeicons:view" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="icon-park-outline:like" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="lets-icons:copy" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <hr>
@@ -1891,13 +1937,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; flex-wrap: wrap;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; flex-wrap: wrap; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -1991,13 +2037,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2091,13 +2137,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2199,13 +2245,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2299,13 +2345,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2399,13 +2445,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2507,13 +2553,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2607,13 +2653,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2707,13 +2753,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2815,13 +2861,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -2915,13 +2961,13 @@
                                                                         necessitatibus cumque.</p>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Disclosures:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
                                                                 </div>
                                                                 <div
-                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px;">
+                                                                    style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-direction: column; gap: 10px; overflow-x: hidden;">
                                                                     <h4>Associated Docs:</h4>
                                                                     <a
                                                                         href="https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e">https://xd.adobe.com/view/6c70e328-a703-4340-b876-77203709a480-3923/screen/6054f8cd-8ab8-492b-a2b3-1b6c21f64e2e</a>
@@ -3044,20 +3090,24 @@
                                     <div
                                         style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
                                         <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                            <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                           <div style="display: flex; gap: 1px; align-items: center;">
+                                                <span class="iconify" data-icon="iconamoon:home" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="hugeicons:view" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="icon-park-outline:like" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="lets-icons:copy" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <hr>
@@ -3390,20 +3440,24 @@
                                     <div
                                         style="display: flex; justify-content: space-between; align-items: center; padding: 10px; flex-wrap: wrap; gap: 10px;">
                                         <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                                            <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                           <div style="display: flex; gap: 1px; align-items: center;">
+                                                <span class="iconify" data-icon="iconamoon:home" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="hugeicons:view" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="icon-park-outline:like" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <div style="display: flex; gap: 1px; align-items: center;">
-                                                <img src="./image/home.svg" alt="home" style="height: 25px;">
+                                                <span class="iconify" data-icon="lets-icons:copy" data-inline="false"
+                                                    style="color: #4ac366; font-size: 25px;"></span>
                                                 <p>10</p>
                                             </div>
                                             <hr>
@@ -3439,13 +3493,11 @@
                                     </span> Email</button>
                                 <button class="activity-tab" data-activity-tab="activity-call"> <span class="icon"
                                         style="margin-right: 5px;">
-                                        <span class="iconify" data-icon="ion:call-outline"
-                                            data-inline="false"></span>
+                                        <span class="iconify" data-icon="ion:call-outline" data-inline="false"></span>
                                     </span> Call <span class="activity-badge">1</span></button>
                                 <button class="activity-tab" data-activity-tab="activity-text"> <span class="icon"
                                         style="margin-right: 5px;">
-                                        <span class="iconify" data-icon="bx:message-detail"
-                                            data-inline="false"></span>
+                                        <span class="iconify" data-icon="bx:message-detail" data-inline="false"></span>
                                     </span> Text</button>
                                 <button class="activity-tab" data-activity-tab="activity-notes"> <span class="icon"
                                         style="margin-right: 5px;">
@@ -3454,28 +3506,27 @@
                                     </span> Notes</button>
                                 <button class="activity-tab" data-activity-tab="activity-calendar"> <span class="icon"
                                         style="margin-right: 5px;">
-                                        <span class="iconify" data-icon="uil:calendar"
-                                            data-inline="false"></span>
+                                        <span class="iconify" data-icon="uil:calendar" data-inline="false"></span>
                                     </span> Calendar</button>
                                 <button class="activity-tab" data-activity-tab="activity-analytics"> <span class="icon"
                                         style="margin-right: 5px;">
                                         <span class="iconify" data-icon="tabler:presentation-analytics"
                                             data-inline="false"></span>
                                     </span> Analytics</button>
-                                    <div class="filter-container">
-                                        <button id="filterButton" class="filter-button">
-                                          <span class="iconify" data-icon="lucide:filter"></span>
-                                        </button>
-                                        <div id="dropdownMenu" class="dropdown-menu">
-                                          <label><input type="checkbox" checked> All</label>
-                                          <label><input type="checkbox" checked> Email</label>
-                                          <label><input type="checkbox" checked> Call</label>
-                                          <label><input type="checkbox" checked> Text</label>
-                                          <label><input type="checkbox" checked> Notes</label>
-                                          <label><input type="checkbox" checked> Calendar</label>
-                                          <label><input type="checkbox" checked> Analytics</label>
-                                        </div>
-                                      </div>
+                                <button id="filterButton" class="filter-button" style="margin-left: 10px;">
+                                    <span class="iconify" data-icon="lucide:filter"></span>
+                                </button>
+                                <div class="filter-container">
+                                    <div id="dropdownMenu" class="dropdown-menu">
+                                        <label><input type="checkbox" checked> All</label>
+                                        <label><input type="checkbox" checked> Email</label>
+                                        <label><input type="checkbox" checked> Call</label>
+                                        <label><input type="checkbox" checked> Text</label>
+                                        <label><input type="checkbox" checked> Notes</label>
+                                        <label><input type="checkbox" checked> Calendar</label>
+                                        <label><input type="checkbox" checked> Analytics</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="activity-tabs-content">
                                 <div class="activity-tab-content active" id="activity-activity">
